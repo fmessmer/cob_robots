@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <arg name="robot-cob3-6" value="cob3-6"/>
+  <arg name="robot-cob3-9" value="cob3-9"/>
+  <arg name="robot-cob4-1" value="cob4-1"/>
+  <arg name="robot-cob4-2" value="cob4-2"/>
+  <arg name="robot-cob4-6" value="cob4-6"/>
+  <arg name="robot-raw3-1" value="raw3-1"/>
+  <arg name="robot-raw3-2" value="raw3-2"/>
+  <arg name="robot-raw3-3" value="raw3-3"/>
+  <arg name="robot-raw3-4" value="raw3-4"/>
+  <arg name="robot-raw3-5" value="raw3-5"/>
+  <arg name="robot-raw3-6" value="raw3-6"/>
+  
+  <arg name="env-empty" value="empty"/>
+  <arg name="env-ipa-kitchen" value="ipa-kitchen"/>
+  <arg name="env-ipa-apartment" value="ipa-apartment"/>
+  <arg name="env-ipa-factory" value="ipa-factory"/>
+
+  <group ns="robot-cob3-6">
+    <group ns="env-empty" >
+      <include file="$(find cob_bringup)/robot.launch">
+        <arg name="robot"   value="$(arg robot-cob3-6)" />
+        <arg name="robot_env" value="$(arg env-empty)"/>
+      </include>
+    </group>
+  </group>
+
+</launch>

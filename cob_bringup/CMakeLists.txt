@@ -5,39 +5,41 @@ find_package(catkin REQUIRED COMPONENTS roslaunch)
 
 catkin_package()
 
-
-
-set(robotlist
-  cob3-6
-  cob3-9
-  cob4-1
-  cob4-2
-  cob4-6
-  raw3-1
-  raw3-2
-  raw3-3
-  raw3-4
-  raw3-5
-  raw3-6
-)
-
-set(envlist
-  empty
-  ipa-kitchen
-  ipa-apartment
-  ipa-factory
-)
-
 if(CATKIN_ENABLE_TESTING)
-    foreach(robot ${robotlist})
-	#foreach(env ${envlist})
-	    message("testing for robot: ${robot} in env: ${env}")
-	    #rosbuild_add_roslaunch_check(tools robot:=${robot} robot_env:=${env})
-	    #rosbuild_add_roslaunch_check(tools ROBOT=${robot} ROBOT_ENV=${env})
-	    roslaunch_add_file_check(robots/${robot}.xml robot_env:=ipa-apartment)
-	#endforeach()
-    endforeach()
+  roslaunch_add_file_check(test/launch_test.xml)
 endif()
+
+#set(robotlist
+  #cob3-6
+  #cob3-9
+  #cob4-1
+  #cob4-2
+  #cob4-6
+  #raw3-1
+  #raw3-2
+  #raw3-3
+  #raw3-4
+  #raw3-5
+  #raw3-6
+#)
+
+#set(envlist
+  #empty
+  #ipa-kitchen
+  #ipa-apartment
+  #ipa-factory
+#)
+
+#if(CATKIN_ENABLE_TESTING)
+    #foreach(robot ${robotlist})
+	##foreach(env ${envlist})
+	    #message("testing for robot: ${robot} in env: ${env}")
+	    ##rosbuild_add_roslaunch_check(tools robot:=${robot} robot_env:=${env})
+	    ##rosbuild_add_roslaunch_check(tools ROBOT=${robot} ROBOT_ENV=${env})
+	    #roslaunch_add_file_check(robots/${robot}.xml robot_env:=ipa-apartment)
+	##endforeach()
+    #endforeach()
+#endif()
 
 
 
