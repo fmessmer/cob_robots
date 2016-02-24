@@ -41,3 +41,8 @@ topics:
   topic   : twist_mux/command_syncmm
   timeout : 0.5
   priority: 70
+-
+  name    : syncnav # cob_twist_controller + navigation
+  topic   : twist_mux/command_syncnav
+  timeout : 0.5
+  priority: 71
