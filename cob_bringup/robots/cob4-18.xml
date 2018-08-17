@@ -56,6 +56,8 @@
 		<include file="$(find cob_bringup)/components/cob4_base.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="driver_yaml" value="$(find cob_hardware_config)/robots/$(arg robot)/config/base_driver_tricycle.yaml"/>
+			<arg name="controller_yaml" value="$(find cob_hardware_config)/robots/$(arg robot)/config/base_controller_tricycle.yaml"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/light.launch">
 			<arg name="robot" value="$(arg robot)"/>
